@@ -10,7 +10,7 @@ export LFLAGS="-fPIC ${LFLAGS}"
 env
 echo ${MACOSX_DEPLOYMENT_TARGET}
 
-./configure --prefix=${PREFIX}
+CC=gcc CXX=g++ ./configure --prefix=${PREFIX}
 
 ${PYTHON} setup.py install
 
