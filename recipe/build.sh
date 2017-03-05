@@ -7,16 +7,10 @@ export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
 export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 export LFLAGS="-fPIC ${LFLAGS}"
 
-# try this to see if it
-#
-if "darwin" in platform.system().lower():
-    dep_tgt = platform.mac_ver()[0]
-    dep_tgt = dep_tgt[:dep_tgt.rfind(".")]
-    print "[setting MACOSX_DEPLOYMENT_TARGET to %s]" % dep_tgt
-    env["MACOSX_DEPLOYMENT_TARGET"] = dep_tgt
+# try this to see if it works
 
 
-./configure --prefix=${PREFIX}
+MACOSX_DEPLOYMENT_TARGET=10.11 ./configure --prefix=${PREFIX}
 
 ${PYTHON} setup.py install
 
