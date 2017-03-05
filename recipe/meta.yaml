@@ -16,7 +16,6 @@ build:
 
 requirements:
   build:
-    - toolchain
     - python
     - hdf5 1.8.17|1.8.17.*
     - libnetcdf 4.4.*
