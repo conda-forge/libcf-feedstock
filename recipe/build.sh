@@ -7,12 +7,8 @@ export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
 export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 export LFLAGS="-fPIC ${LFLAGS}"
 
-echo ${CFLAGS}
-echo ${CPPFLAGS}
-echo ${LDFLAGS}
-echo ${LFLAGS}
-echo ${CC}
-
+env
+echo ${MACOSX_DEPLOYMENT_TARGET}
 
 ./configure --prefix=${PREFIX}
 
