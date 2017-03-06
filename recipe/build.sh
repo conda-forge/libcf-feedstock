@@ -1,5 +1,5 @@
 
-source activate "${CONDA_DEFAULT_ENV}"
+#source activate "${CONDA_DEFAULT_ENV}"
 
 export CFLAGS="-Wall -m64 -pipe -O2 -fPIC ${CFLAGS}"
 export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
@@ -10,7 +10,7 @@ export LFLAGS="-fPIC ${LFLAGS}"
 # try this to see if it works
 
 
-MACOSX_DEPLOYMENT_TARGET=10.11 ./configure --prefix=${PREFIX}
+./configure --prefix=${PREFIX}
 
 ${PYTHON} setup.py install
 
