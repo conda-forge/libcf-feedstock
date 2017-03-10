@@ -4,7 +4,7 @@ export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
 export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 export LFLAGS="-fPIC ${LFLAGS}"
-
+export FC=""
 
 ./configure --prefix=${PREFIX}
 ${PYTHON} setup.py install
