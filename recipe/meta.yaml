@@ -1,5 +1,5 @@
 {% set name = "libcf" %}
-{% set version = "1.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: de3f16c515198eba596f5e52fc69ce7fd18230c043711ff4c1934d76dbbc8259
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win]
 
 requirements:
