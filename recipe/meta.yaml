@@ -12,22 +12,23 @@ source:
 
 build:
   number: 0
-  skip: True  # [win or py3k] 
+  skip: True  # [win or py3k]
 
 requirements:
   build:
-    - toolchain  # [osx]
+    - toolchain
     - python
-    - hdf5 1.8.17|1.8.17.*
+    - hdf5 1.10.*
     - libnetcdf 4.4.*
     - lapack >=3.4.2
     - clapack >=3.2.1
     - curl
     - ossuuid
     - gcc
+
   run:
     - python
-    - hdf5 1.8.17|1.8.17.*
+    - hdf5 1.10.*
     - libnetcdf  4.4.*
     - lapack >=3.4.2
     - clapack >=3.2.1
@@ -45,10 +46,10 @@ about:
   license_file: 'COPYRIGHT'
   summary: 'LibCF library access data files in accordance with the CF Conventions.'
   description: |
-    By using libcf, a data producer can produce files that conform to the CF 
-    standards, without having to write netCDF code to create and decode all 
-    the attributes that the CF convention uses to store meta-data. A data consumer 
-    can use libcf to read any file which conforms to the CF conventions; the 
+    By using libcf, a data producer can produce files that conform to the CF
+    standards, without having to write netCDF code to create and decode all
+    the attributes that the CF convention uses to store meta-data. A data consumer
+    can use libcf to read any file which conforms to the CF conventions; the
     file does not need to be created with libcf to be read by libcf
   dev_url: https://sourceforge.net/projects/libcf/
 
