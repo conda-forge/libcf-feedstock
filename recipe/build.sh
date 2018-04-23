@@ -1,4 +1,3 @@
-source activate "${CONDA_DEFAULT_ENV}"
 #export CFLAGS="-Wall -m64 -pipe -O2  -fPIC ${CFLAGS}"
 #export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
 #export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
