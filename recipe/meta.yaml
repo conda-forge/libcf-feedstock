@@ -10,12 +10,11 @@ source:
   sha256: de3f16c515198eba596f5e52fc69ce7fd18230c043711ff4c1934d76dbbc8259
 
 build:
-  number: 2
+  number: 4
   skip: True  # [win]
 
 requirements:
   build:
-    - toolchain
     - python
     - hdf5 1.10.1
     - libnetcdf 4.*
@@ -23,7 +22,11 @@ requirements:
     - clapack >=3.2.1
     - curl >=7.44.0,<8
     - ossuuid
-    - gcc
+    - gcc_linux-64 [linux]
+    - gfortran_linux-64 [linux]
+    - clang_osx-64 [osx]
+    - gfortran_osx-64 [osx]
+    - autoconf
 
   run:
     - python
@@ -34,6 +37,7 @@ requirements:
     - curl >=7.44.0,<8
     - ossuuid
     - libgfortran
+    - libgcc
 
 test:
   imports:
