@@ -10,13 +10,13 @@ source:
   sha256: de3f16c515198eba596f5e52fc69ce7fd18230c043711ff4c1934d76dbbc8259
 
 build:
-  number: 4
+  number: 5
   skip: True  # [win]
 
 requirements:
   build:
     - python
-    - hdf5 1.10.1
+    - hdf5 1.10.1.*
     - libnetcdf 4.*
     - lapack >=3.4.2
     - clapack >=3.2.1
@@ -30,7 +30,7 @@ requirements:
 
   run:
     - python
-    - hdf5 1.10.1
+    - hdf5 1.10.1.*
     - libnetcdf  4.*
     - lapack >=3.4.2
     - clapack >=3.2.1
