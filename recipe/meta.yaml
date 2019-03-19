@@ -1,6 +1,5 @@
 {% set name = "libcf" %}
 {% set version = "1.0.2" %}
-{% set variant = "openblas" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +10,7 @@ source:
   sha256: 828f34ebc765177cddf7fee71d13d65f8db114537170d3127d36f02cd8494f74
 
 build:
-  number: 1006
+  number: 1007
   skip: True  # [win]
 
 requirements:
@@ -19,15 +18,15 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
   host:
+    - libblas
+    - libcblas
     - python
     - libnetcdf
-    - blas 1.1 {{ variant }}
     - curl >=7.44.0,<8
     - ossuuid
   run:
     - python
     - libnetcdf
-    - blas 1.1 {{ variant }}
     - curl >=7.44.0,<8
     - ossuuid
 
