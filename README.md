@@ -87,6 +87,7 @@ Current build status
       <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
     </td>
   </tr>
+![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
 </table>
 
 Current release info
@@ -183,5 +184,7 @@ Feedstock Maintainers
 
 * [@dnadeau4](https://github.com/dnadeau4/)
 * [@doutriaux1](https://github.com/doutriaux1/)
+* [@downiec](https://github.com/downiec/)
+* [@muryanto1](https://github.com/muryanto1/)
 * [@xylar](https://github.com/xylar/)
 
