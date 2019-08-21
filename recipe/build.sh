@@ -6,6 +6,12 @@ export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 export LFLAGS="-fPIC ${LFLAGS}"
 export FC=""
 export LDSHARED="$CC -shared -pthread" 
+# needed for clang_osx-64
+if [ `uname` == Darwin ]; then
+    export CFLAGS="-Wl,-syslibroot / -isysroot / ${CFLAGS}"
+    # configure need this otherwise "error.h" is not found and configure report netcdf.h 
+    export CPPFLAGS="-Wl,-syslibroot / -isysroot / -I${PREFIX}/include ${CPPFLAGS}"
+fi
 ./configure --prefix=${PREFIX}
 make
 make install
