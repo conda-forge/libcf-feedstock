@@ -1,7 +1,7 @@
 export CFLAGS="${CFLAGS} -Wall -m64 -pipe -O2  -fPIC -I${PREFIX}/include"
 export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
-export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
+export LDFLAGS="-L${PREFIX}/lib -L${SRC_DIR}/.lib -L${SRC_DIR}/lib  ${LDFLAGS}"
 export LFLAGS="-fPIC  ${LDFLAGS} ${LFLAGS}"
 export FC=""
 export LDSHARED="$CC -shared -pthread"
