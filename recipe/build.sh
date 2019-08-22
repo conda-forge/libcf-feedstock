@@ -16,9 +16,9 @@ aclocal
 automake --add-missing
 automake
 autoconf
-more cf_config.h
+cat cf_config.h
 ./configure --prefix=${PREFIX}
-more cf_config.h
+cat cf_config.h
 make
 make install
 if [ `uname` == Linux ]; then
