@@ -25,6 +25,7 @@ requirements:
     - libcblas
     - curl >=7.44.0,<8
     - libuuid
+    - automake
   run:
     - python
     - libnetcdf

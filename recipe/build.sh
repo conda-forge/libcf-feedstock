@@ -12,6 +12,8 @@ if [ `uname` == Darwin ]; then
     # configure need this otherwise "error.h" is not found and configure report netcdf.h 
     export CPPFLAGS="-Wl,-syslibroot / -isysroot / -I${PREFIX}/include ${CPPFLAGS}"
 fi
+autogen
+autoconf
 ./configure --prefix=${PREFIX}
 make
 make install
