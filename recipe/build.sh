@@ -13,6 +13,7 @@ if [ `uname` == Darwin ]; then
     export CPPFLAGS="-Wl,-syslibroot / -isysroot / -I${PREFIX}/include ${CPPFLAGS}"
 fi
 aclocal
+automake --add-missing
 automake
 autoconf
 ./configure --prefix=${PREFIX}
