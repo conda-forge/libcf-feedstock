@@ -1,4 +1,4 @@
-export CFLAGS="-Wall -m64 -pipe -O2  -fPIC -I${PREFIX}/include ${CFLAGS}"
+export CFLAGS="${CFLAGS} -Wall -m64 -pipe -O2  -fPIC -I${PREFIX}/include ${CFLAGS}"
 export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
 export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
