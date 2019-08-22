@@ -1,11 +1,10 @@
-#source activate "${CONDA_DEFAULT_ENV}"
-export CFLAGS="-Wall -m64 -pipe -O2  -fPIC ${CFLAGS}"
+export CFLAGS="-Wall -m64 -pipe -O2  -fPIC -I${PREFIX}/include ${CFLAGS}"
 export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
 export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 export LFLAGS="-fPIC ${LFLAGS}"
 export FC=""
-export LDSHARED="$CC -shared -pthread" 
+
 # needed for clang_osx-64
 if [ `uname` == Darwin ]; then
     export CFLAGS="-Wl,-syslibroot / -isysroot / ${CFLAGS}"
