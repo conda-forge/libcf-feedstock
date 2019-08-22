@@ -1,8 +1,8 @@
-export CFLAGS="${CFLAGS} -Wall -m64 -pipe -O2  -fPIC -I${PREFIX}/include ${CFLAGS}"
+export CFLAGS="${CFLAGS} -Wall -m64 -pipe -O2  -fPIC -I${PREFIX}/include"
 export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
-export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
-export LFLAGS="-fPIC ${LFLAGS}"
+export LDFLAGS="-L${PREFIX}/lib -L.lib -Llib${LDFLAGS}"
+export LFLAGS="-fPIC  ${LDFALGS} ${LFLAGS}"
 export FC=""
 
 # needed for clang_osx-64
