@@ -20,8 +20,8 @@ requirements:
   host:
     - python
     - libnetcdf
-    - libblas
-    - libcblas
+    - libblas 3.8.0 *openblas
+    - libcblas 3.8.0 *openblas
     - curl >=7.44.0,<8
     - libuuid
   run:
@@ -29,8 +29,8 @@ requirements:
     - libnetcdf
     - curl >=7.44.0,<8
     - libuuid
-    - libblas
-    - libcblas
+    - libblas 3.8.0 *openblas
+    - libcblas 3.8.0 *openblas
 test:
   imports:
     - pycf
