@@ -1,5 +1,5 @@
 {% set name = "libcf" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 {% set variant = "openblas" %}
 
 package:
@@ -7,30 +7,30 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/CDAT/libcf/archive/1.0.2.tar.gz
-  sha256: 828f34ebc765177cddf7fee71d13d65f8db114537170d3127d36f02cd8494f74
+  url: https://github.com/CDAT/libcf/archive/1.0.3.tar.gz
+  sha256: bf8102f55489fe96cd98e365e0e013837396c84a8c47c8a4eb15ef627817c1c9
 
 build:
-  number: 1007
+  number: 0
   skip: True  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('fortran') }}
   host:
     - python
     - libnetcdf
-    - blas 1.1 {{ variant }}
+    - libblas 3.8.0 *openblas
+    - libcblas 3.8.0 *openblas
     - curl >=7.44.0,<8
     - libuuid
   run:
     - python
     - libnetcdf
-    - blas 1.1 {{ variant }}
     - curl >=7.44.0,<8
     - libuuid
-
+    - libblas 3.8.0 *openblas
+    - libcblas 3.8.0 *openblas
 test:
   imports:
     - pycf
@@ -54,3 +54,5 @@ extra:
     - dnadeau4
     - doutriaux1
     - xylar
+    - downiec
+    - muryanto1
