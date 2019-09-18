@@ -5,15 +5,12 @@ export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 export LFLAGS="-fPIC ${LFLAGS}"
 export FC=""
 
-<<<<<<< HEAD
-=======
 # needed for clang_osx-64
 if [ `uname` == Darwin ]; then
     export CFLAGS="-Wl,-syslibroot / -isysroot / ${CFLAGS}"
     # configure need this otherwise "error.h" is not found and configure report netcdf.h 
     export CPPFLAGS="-Wl,-syslibroot / -isysroot / -I${PREFIX}/include ${CPPFLAGS}"
 fi
->>>>>>> origin
 ./configure --prefix=${PREFIX}
 make
 make install
