@@ -6,7 +6,7 @@ export LFLAGS="-fPIC ${LFLAGS}"
 export FC=""
 
 # needed for clang_osx-64
-if [ `uname` == Darwin ]; then
+if [ ${HOME} == "/Users/distiller" ]; then
     export CFLAGS="-Wl,-syslibroot / -isysroot / ${CFLAGS}"
     # configure need this otherwise "error.h" is not found and configure report netcdf.h 
     export CPPFLAGS="-Wl,-syslibroot / -isysroot / -I${PREFIX}/include ${CPPFLAGS}"
