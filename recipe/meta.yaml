@@ -11,23 +11,27 @@ source:
   sha256: bf8102f55489fe96cd98e365e0e013837396c84a8c47c8a4eb15ef627817c1c9
 
 build:
-  number: 3
+  number: 4
   skip: True  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
+    - libnetcdf 4.6.2
+    - libblas 3.8.0 *openblas
+    - libcblas 3.8.0 *openblas
+    - libuuid
   host:
     - python
-    - libnetcdf
+    - libnetcdf 4.6.2
     - libblas 3.8.0 *openblas
     - libcblas 3.8.0 *openblas
     - curl >=7.44.0,<8
     - libuuid
   run:
     - python
-    - libnetcdf
+    - libnetcdf 4.6.2
     - curl >=7.44.0,<8
     - libuuid
     - libblas 3.8.0 *openblas
