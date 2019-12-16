@@ -9,7 +9,7 @@ channel_targets:
 docker_image:
 - condaforge/linux-anvil-comp7
 libnetcdf:
-- 4.7.1
+- 4.7.3
 libuuid:
 - 2.32.1
 pin_run_as_build:
