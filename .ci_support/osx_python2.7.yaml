@@ -9,7 +9,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libnetcdf:
-- 4.7.1
+- 4.7.3
 libuuid:
 - 2.32.1
 macos_machine:
