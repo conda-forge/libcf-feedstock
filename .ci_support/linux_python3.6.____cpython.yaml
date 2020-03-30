@@ -9,16 +9,14 @@ channel_targets:
 docker_image:
 - condaforge/linux-anvil-comp7
 libnetcdf:
-- 4.7.3
+- 4.7.4
 libuuid:
 - 2.32.1
 pin_run_as_build:
-  libnetcdf:
-    max_pin: x.x.x
   libuuid:
     max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.8'
+- 3.6.* *_cpython
