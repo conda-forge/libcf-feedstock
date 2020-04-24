@@ -1,6 +1,14 @@
 {% set name = "libcf" %}
 {% set version = "1.0.3" %}
-{% set variant = "openblas" %}
+{% set build = 7 %}
+
+# ensure mpi is defined (needed for conda-smithy recipe-lint)
+{% set mpi = mpi or 'nompi' %}
+
+{% if mpi == 'nompi' %}
+# prioritize nompi variant
+{% set build = build + 100 %}
+{% endif %}
 
 package:
   name: {{ name|lower }}
@@ -11,8 +19,21 @@ source:
   sha256: bf8102f55489fe96cd98e365e0e013837396c84a8c47c8a4eb15ef627817c1c9
 
 build:
-  number: 6
+  number: {{ build }}
   skip: True  # [win]
+
+  # add build string so packages can depend on
+  # mpi or nompi variants explicitly:
+  # `libcf * mpi_mpich_*` for mpich
+  # `libcf * mpi_*` for any mpi
+  # `libcf * nompi_*` for no mpi
+
+  {% if mpi != 'nompi' %}
+  {% set mpi_prefix = "mpi_" + mpi %}
+  {% else %}
+  {% set mpi_prefix = "nompi" %}
+  {% endif %}
+  string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"
 
 requirements:
   build:
@@ -20,13 +41,14 @@ requirements:
   host:
     - python
     - libnetcdf
+    - libnetcdf * {{ mpi_prefix }}_*
     - libblas 3.8.0 *openblas
     - libcblas 3.8.0 *openblas
     - curl >=7.44.0,<8
     - libuuid
   run:
     - python
-    - libnetcdf
+    - libnetcdf * {{ mpi_prefix }}_*
     - curl >=7.44.0,<8
     - libuuid
     - libblas 3.8.0 *openblas
