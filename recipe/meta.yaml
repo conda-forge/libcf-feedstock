@@ -22,17 +22,19 @@ requirements:
     - libnetcdf
     # building with the nompi variant should allow any MPI variant at runtime
     - libnetcdf * nompi_*
-    - libblas 3.8.0 *openblas
-    - libcblas 3.8.0 *openblas
-    - curl >=7.44.0,<8
+    - libblas
+    - libcblas
+    - openblas
+    - curl
     - libuuid
   run:
     - python
     - libnetcdf
-    - curl >=7.44.0,<8
+    - curl
     - libuuid
-    - libblas 3.8.0 *openblas
-    - libcblas 3.8.0 *openblas
+    - libblas * *openblas
+    - libcblas * *openblas
+    - openblas
 test:
   imports:
     - pycf
