@@ -22,8 +22,6 @@ requirements:
     - libnetcdf
     # building with the nompi variant should allow any MPI variant at runtime
     - libnetcdf * nompi_*
-    - libblas
-    - libcblas
     - openblas
     - curl
     - libuuid
