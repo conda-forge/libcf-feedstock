@@ -12,10 +12,6 @@ curl:
 - '7'
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
-libblas:
-- 3.8 *netlib
-libcblas:
-- 3.8 *netlib
 libnetcdf:
 - 4.8.0
 libuuid:
