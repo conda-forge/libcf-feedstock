@@ -1,13 +1,13 @@
 {% set name = "libcf" %}
 {% set version = "1.0.3" %}
-{% set build = 110 %}
+{% set build = 111 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/CDAT/libcf/archive/1.0.3.tar.gz
+  url: https://github.com/CDAT/libcf/archive/{{ version }}.tar.gz
   sha256: bf8102f55489fe96cd98e365e0e013837396c84a8c47c8a4eb15ef627817c1c9
 
 build:
@@ -22,17 +22,17 @@ requirements:
     - libnetcdf
     # building with the nompi variant should allow any MPI variant at runtime
     - libnetcdf * nompi_*
-    - libblas 3.8.0 *openblas
-    - libcblas 3.8.0 *openblas
-    - curl >=7.44.0,<8
+    - openblas
+    - curl
     - libuuid
   run:
     - python
     - libnetcdf
-    - curl >=7.44.0,<8
+    - curl
     - libuuid
-    - libblas 3.8.0 *openblas
-    - libcblas 3.8.0 *openblas
+    - openblas
+    - libblas * *openblas
+    - libcblas * *openblas
 test:
   imports:
     - pycf
@@ -57,5 +57,4 @@ extra:
     - doutriaux1
     - xylar
     - downiec
-    - muryanto1
     - jasonb5
