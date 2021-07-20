@@ -3,7 +3,12 @@
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
-export CFLAGS="-Wall -m64 -pipe -O2  -fPIC -I${PREFIX}/include ${CFLAGS}"
+export CFLAGS="-Wall -pipe -O2  -fPIC -I${PREFIX}/include ${CFLAGS}"
+if [[ "$target_platform" != "linux-aarch64" ]]; then
+  # probably not necessary anywhere, but makes aarch64 unhappy for sure
+  export CFLAGS="-m64 ${CFLAGS}"
+fi
+
 export CXXFLAGS="${CFLAGS} ${CXXFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include ${CPPFLAGS}"
 export LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
