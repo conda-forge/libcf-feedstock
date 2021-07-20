@@ -16,7 +16,7 @@ if [ ${HOME} == "/Users/distiller" ]; then
     # configure need this otherwise "error.h" is not found and configure report netcdf.h 
     export CPPFLAGS="-Wl,-syslibroot / -isysroot / -I${PREFIX}/include ${CPPFLAGS}"
 fi
-./configure --prefix=${PREFIX}
+./configure --prefix=${PREFIX} || (cat config.log && exit 1)
 make
 make install
 if [ `uname` == Linux ]; then
