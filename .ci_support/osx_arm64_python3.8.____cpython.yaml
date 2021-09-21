@@ -11,7 +11,7 @@ channel_targets:
 curl:
 - '7'
 libnetcdf:
-- 4.8.0
+- 4.8.1
 libuuid:
 - 2.32.1
 macos_machine:
