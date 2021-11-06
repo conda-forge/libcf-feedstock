@@ -5,7 +5,7 @@ c_compiler_version:
 cdt_name:
 - cos6
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 curl:
@@ -15,7 +15,7 @@ docker_image:
 libnetcdf:
 - 4.8.1
 libuuid:
-- 2.32.1
+- '2'
 openblas:
 - 0.3.*
 pin_run_as_build:
