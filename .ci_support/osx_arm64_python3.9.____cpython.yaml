@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '12'
+- '14'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -19,10 +19,6 @@ macos_machine:
 openblas:
 - 0.3.*
 pin_run_as_build:
-  curl:
-    max_pin: x
-  libuuid:
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
