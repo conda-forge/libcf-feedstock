@@ -1,11 +1,11 @@
-About libcf
-===========
+About libcf-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libcf-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.unidata.ucar.edu/software/libcf/
 
 Package license: UCAR/UNIDATA
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libcf-feedstock/blob/main/LICENSE.txt)
 
 Summary: LibCF library access data files in accordance with the CF Conventions.
 
