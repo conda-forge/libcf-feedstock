@@ -1,6 +1,6 @@
 {% set name = "libcf" %}
 {% set version = "1.0.3" %}
-{% set build = 117 %}
+{% set build = 118 %}
 
 package:
   name: {{ name|lower }}
